@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /**
  * print_times_table - Entry point
@@ -8,4 +9,4 @@ void print_times_table(int n)
 {
 
 	return (0);
-}
+} 
