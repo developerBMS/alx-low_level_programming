@@ -1,8 +1,3 @@
-/*
- * File: 3-print_alphabets.c
- * Auth: 
- */
-
 #include <stdio.h>
 
 /**
@@ -23,4 +18,4 @@ int main(void)
 	putchar('\n');
 
 	return (0);
-}
+} 
