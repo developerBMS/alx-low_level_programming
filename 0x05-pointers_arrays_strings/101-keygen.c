@@ -1,32 +1,32 @@
-#include "main.h"
-/**
- * _atoi - copies the string pointed to by src
- *@s: first value to check
- *
- * Return: result
- */
-int _atoi(char *s)
-{
-	unsigned int result = 0;
-	int i = 0, j = 0, a = 0, negat = 1;
+#include <stdo.h>
+#include <stdlib.h>
+#include <time.h>
 
-	while (s[i] != '\0')
+/**
+* main - program that generate random valid password for program 101-crackme
+* return: always 0 (success)
+*/
+
+int main(void)
+{
+	int pass[100];
+	int i, sum, n;
+
+	sum = 0;
+	srand(time(NULL));
+
+	for (i = 0; i < 100; i++)
 	{
-		i++;
-	}
-	for (j = 0; j < i; j++)
-	{
-		if (s[j] == '-')
-			negat = negat * -1;
-		while ((s[j] >= '0') && (s[j] <= '9'))
+		pass[i] = rand() % 78;
+		sum += (pass[i] + '0');
+		putchar(pass[i] + '0');	
+		if ((2772 - sum) - '0' < 78)
 		{
-			result = (result * 10) + (s[j] - '0');
-			j++;
-			a = 1;
+			n = 2772 - sum - '0';
+			sum += n;
+			putchar(n + '0');
+			break;
 		}
-		if (a == 1)
-			j = i;
 	}
-	result = result * negat;
-	return (result);
+	return (0);
 }
